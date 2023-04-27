@@ -1,0 +1,1 @@
+rootProject.name = "com.app.nclab_server"
