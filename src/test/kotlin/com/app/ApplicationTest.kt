@@ -1,6 +1,6 @@
 package com.app
 
-
+import com.app.module.configureRouting
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.server.testing.*
@@ -11,7 +11,7 @@ class ApplicationTest {
     @Test
     fun testRoot() = testApplication {
         application {
-            //configureRouting()
+            configureRouting()
         }
         client.get("/").apply {
             assertEquals(HttpStatusCode.OK, status)
