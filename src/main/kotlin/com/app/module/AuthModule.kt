@@ -7,6 +7,7 @@ import com.app.service.imple.UserServiceImple
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
+import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.request.*
@@ -20,14 +21,14 @@ fun Application.authModule() {
     val authService = AuthServiceImple()
     val userService = UserServiceImple()
 
-    install(ContentNegotiation){
-        json()
-    }
-    install(StatusPages) {
-        exception<Throwable> { call, cause ->
-            call.respondText(text = "500: $cause" , status = HttpStatusCode.InternalServerError)
-        }
-    }
+    //install(ContentNegotiation){
+    //    json()
+    //}
+    //install(StatusPages) {
+    //        exception<Throwable> { call, cause ->
+    //        call.respondText(text = "500: $cause" , status = HttpStatusCode.InternalServerError)
+    //    }
+    //}
 
     routing {
         route("/auth"){
