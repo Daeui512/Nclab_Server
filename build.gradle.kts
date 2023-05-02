@@ -4,9 +4,9 @@ val logback_version: String by project
 val exposed_version: String by project
 
 plugins {
-    kotlin("jvm") version "11"
+    kotlin("jvm") version "1.8.20"
     id("io.ktor.plugin") version "2.1.2"
-    id("org.jetbrains.kotlin.plugin.serialization") version "11"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.8.20"
 }
 
 group = "com.app"
