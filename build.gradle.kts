@@ -9,6 +9,18 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.20"
 }
 
+workflow {
+    run {
+        using("jenkins") {
+            node {
+                stage("Build") {
+                    sh "./gradlew build"
+                }
+            }
+        }
+    }
+}
+
 group = "com.app"
 version = "0.0.1"
 application {
