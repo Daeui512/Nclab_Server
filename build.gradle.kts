@@ -49,4 +49,6 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.32.1")
     implementation("mysql:mysql-connector-java:8.0.26")
 
+    testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }
