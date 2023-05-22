@@ -9,18 +9,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.20"
 }
 
-workflow {
-    run {
-        using("jenkins") {
-            node {
-                stage("Build") {
-                    sh "./gradlew build"
-                }
-            }
-        }
-    }
-}
-
 group = "com.app"
 version = "0.0.1"
 application {
@@ -63,4 +51,20 @@ dependencies {
 
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+}
+
+tasks.register<Exec>("run"){
+    commandLine = listOf("java", "-jar", "build/libs/nclab_server.jar")
+}
+
+tasks.named("build") {
+    dependsOn("shadowJar")
+}
+
+tasks.named("shadowJar"){
+    archiveClassifier.set("")
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
 }
