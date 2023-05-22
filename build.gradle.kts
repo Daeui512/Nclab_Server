@@ -1,6 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
@@ -52,18 +49,4 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.32.1")
     implementation("mysql:mysql-connector-java:8.0.26")
 
-}
-
-tasks.register<Exec>("run"){
-    commandLine = listOf("java", "-jar", "build/libs/nclab_server.jar")
-}
-
-tasks.withType(ShadowJar::class) {
-    archiveClassifier.set("")
-}
-
-tasks.withType(KotlinCompile::class) {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
