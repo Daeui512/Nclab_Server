@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 val ktor_version: String by project
 val kotlin_version: String by project
@@ -61,7 +62,7 @@ tasks.named("build") {
     dependsOn("shadowJar")
 }
 
-tasks.withType<ShadowJar> {
+tasks.withType<ShadowJar::class> {
     archiveClassifier.set("")
 }
 
