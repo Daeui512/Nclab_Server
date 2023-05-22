@@ -58,11 +58,7 @@ tasks.register<Exec>("run"){
     commandLine = listOf("java", "-jar", "build/libs/nclab_server.jar")
 }
 
-tasks.named("build") {
-    dependsOn("shadowJar")
-}
-
-tasks.withType<ShadowJar::class> {
+tasks.withType(ShadowJar::class) {
     archiveClassifier.set("")
 }
 
