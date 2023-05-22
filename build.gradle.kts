@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
@@ -65,6 +67,8 @@ tasks.named("shadowJar"){
     archiveClassifier.set("")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+tasks.withType(KotlinCompile::class) {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
