@@ -42,15 +42,11 @@ dependencies {
     implementation("io.ktor:ktor-server-tomcat-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("io.ktor:ktor-serialization:$ktor_version")
-
     implementation("ch.qos.logback:logback-classic:$logback_version")
-
     implementation("org.jetbrains.exposed:exposed-core:0.32.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.32.1")
     implementation("org.jetbrains.exposed:exposed-dao:0.32.1")
     implementation("mysql:mysql-connector-java:8.0.26")
-
-    implementation("io.ktor:ktor-server-servlet-jakarta:$ktor_version")
 
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
