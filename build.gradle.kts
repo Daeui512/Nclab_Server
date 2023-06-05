@@ -7,21 +7,16 @@ plugins {
     kotlin("jvm") version "1.8.20"
     id("io.ktor.plugin") version "2.1.2"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.20"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "com.app"
 version = "0.0.1"
+
 application {
     mainClass.set("com.app.ApplicationKt")
-
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
-}
-
-ktor {
-    fatJar {
-        archiveFileName.set("fat.jar")
-    }
 }
 
 repositories {
@@ -55,6 +50,9 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.32.1")
     implementation("mysql:mysql-connector-java:8.0.26")
 
+    implementation("io.ktor:ktor-server-servlet-jakarta:$ktor_version")
+
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+
 }
