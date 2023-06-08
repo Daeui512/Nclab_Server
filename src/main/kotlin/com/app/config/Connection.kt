@@ -9,7 +9,7 @@ class Connection{
             Database.connect(
                 "jdbc:mysql://localhost:3306/NCLAB",
                 driver = "com.mysql.cj.jdbc.Driver",
-                user = "root",
+                user = "NCLAB",
                 password = "Nclab0215!"
             )
         }
