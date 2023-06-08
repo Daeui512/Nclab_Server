@@ -15,9 +15,9 @@ fun Application.boardModule() {
 
     val boardService = BoardServiceImple()
 
-    install(ContentNegotiation) {
-        json()
-    }
+//    install(ContentNegotiation) {
+//        json()
+//    }
 
     routing {
         route("/boards") {
