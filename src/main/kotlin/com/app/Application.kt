@@ -19,6 +19,7 @@ fun Application.module() {
     userModule()     // domain ("/users/*")
     authModule()     // domain ("/auth/*")
     socketModule()   // domain ("/chat/*")
+    boardModule()    // domain ("/boards/*")
 
 }
 
