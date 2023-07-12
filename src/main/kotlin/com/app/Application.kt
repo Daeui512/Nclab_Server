@@ -6,7 +6,7 @@ import io.ktor.server.engine.*
 import io.ktor.server.tomcat.*
 
 fun main() {
-    embeddedServer(Tomcat, port = 8080, host = "0.0.0.0", module = Application::module)
+    embeddedServer(Tomcat, port = 8090, host = "0.0.0.0", module = Application::module)
         .start(wait = true)
 }
 
@@ -19,7 +19,7 @@ fun Application.module() {
     userModule()     // domain ("/users/*")
     authModule()     // domain ("/auth/*")
     socketModule()   // domain ("/chat/*")
-
+    boardModule()    // domain ("/boards/*")
 }
 
 
